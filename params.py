@@ -36,3 +36,10 @@ def solveH(M, t):
     zGuess = 6000
     z = fsolve(f, zGuess)
     return z[0]
+
+def solveM(H, t):
+    f = lambda M: (1 - tC) * c * H + fMultiplier * logistic(H) - wageDecay(t, w) * M - tVAT * M + econGrowth * M
+
+    zGuess = 6000
+    z = fsolve(f, zGuess)
+    return z[0]
